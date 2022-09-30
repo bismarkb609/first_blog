@@ -1,0 +1,48 @@
+{% extends 'blog/base.html'%}
+{% load static %}
+
+
+{% block index_css %}
+<link rel="stylesheet" href="{% static 'css/index.css'%}">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<main class="main-body">
+    {% for info in data %}
+    <section class="list_post">
+        <h3 class="title-of-post"> {{ info.title }} </h3> 
+        <p> {{ info.text|truncatewords:20}} </p>
+        <h5 class="date-created"> {{ info.created_date }}
+    </section>
+    {% endfor %}
+</main>
+
+<main class="name">
+    
+    <section class="bloggers-legend">
+        <p class="top-bloggers"> Top Bloggers </p>
+        {% for info in data %}
+        <ol>
+            <li> 
+                {{ info.author }}
+            </li>
+        </ol>
+        {% endfor %}
+    </section>
+</main>
+
+
+<section class="links-to-click">
+    <div id="Sign">
+        <p class="Sign-up"> <a href="{% url 'sign-up' %}">Sign Up</a> </p>
+    </div>
+
+    <div class="Log">
+        <p class="Login"> <a href="{% url 'log-in' %}" > Login </a> </p>
+    </div>
+</section>
+{% endblock %}

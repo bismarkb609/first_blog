@@ -67,12 +67,26 @@ h4 {
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #C25100;
+    color: #c26c2f;
     background: none;
     border-color: #C25100;
 }
 
 .btn-secondary:hover {
     color: #FFFFFF;
-    background-color: #C25100;
+    background-color: #bd6d34;
+}
+
+
+#text-to-display {
+    padding: 1px;
+}
+
+.page-header {
+    padding: 10px;
+    margin: 20px;
+    border-radius: 30px;
+    width: 1400px;
+    height: 70px;
+    box-shadow: 10px 10px 50px blanchedalmond;
 }
