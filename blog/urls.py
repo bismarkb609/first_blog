@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path("", views.index, name="home-page"),
@@ -8,3 +9,6 @@ urlpatterns = [
     path("sign_up/", views.sign_up, name="sign-up"),
     path("log_in/", views.log_in, name="log-in")
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()

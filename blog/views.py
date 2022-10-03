@@ -1,9 +1,11 @@
+from cmath import log
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from django.utils import timezone
 from .models import Post
 
+from .forms import SignUpform, Loginform
 # Create your views here.
 
 def index(request):
@@ -21,9 +23,17 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 
-def sign_up():
-    pass 
+def sign_up(request):
+    signup_form = SignUpform()
+    ctx = {
+        'SignupForm': signup_form
+    }
+    return render(request, "blog/sign_up.html", ctx)
 
 
-def log_in():
-    pass 
+def log_in(request):
+    login_form = Loginform()
+    ctx = {
+        "loginForm" : login_form
+    }
+    return render(request, "blog/log_in.html", ctx)

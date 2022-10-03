@@ -1,0 +1,17 @@
+h1 {
+    color: slateblue;
+    text-align: center;
+}
+
+.forms {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid red;
+    box-shadow: 10px 10px 40px slateblue;
+    width: 500px;
+    height: 600px;
+    border-radius: 30px;
+    position: absolute;
+    left: 45rem;
+    top: 150px;
+}

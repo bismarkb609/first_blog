@@ -1,0 +1,13 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/signup.css'%}">
+
+
+<span class="Sign-Up-form"> 
+    <form method="POST" action="" class="forms">
+        <h1> Join Us</h1>
+        {% csrf_token %}
+        {{ SignupForm.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</span>
