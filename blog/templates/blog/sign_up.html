@@ -1,13 +1,25 @@
-
+{% extends 'blog/base.html' %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/signup.css'%}">
+
+{% block index_css %}
+<link rel="stylesheet" href="{% static 'css/sign.css' %}">
+<h2> Create Account </h2>
+{% endblock %}
 
 
+
+{% for message in messages %}
+{% endfor %}
+
+
+{% block content %}
+<h5> {{ message }} </h5>
 <span class="Sign-Up-form"> 
     <form method="POST" action="" class="forms">
-        <h1> Join Us</h1>
         {% csrf_token %}
         {{ SignupForm.as_p }}
-        <input type="submit" value="Submit">
+        <input type="submit" value="Create Account">
     </form>
 </span>
+
+{% endblock %}

@@ -9,38 +9,49 @@
 
 
 {% block content %}
-<main class="main-body">
-    {% for info in data %}
-    <section class="list_post">
-        <h3 class="title-of-post"> {{ info.title }} </h3> 
-        <p> {{ info.text|truncatewords:20}} </p>
-        <h5 class="date-created"> {{ info.created_date }}
-    </section>
-    {% endfor %}
-</main>
 
 <main class="name">
     
-    <section class="bloggers-legend">
-        <p class="top-bloggers"> Top Bloggers </p>
-        {% for info in data %}
-        <ol>
-            <li> 
-                {{ info.author }}
-            </li>
-        </ol>
-        {% endfor %}
+
+        {% if user.is_authenticated %}
+        <br>
+        <h3> Welcome {{ user.username }} </h3>
+        <p> <a href="{% url 'create-post' %}"> Create Post</a> </p> 
+        {% else %}
+        <h6><i>A place to share ideas and Learn new things</i></h6>
+        {% endif %}
+        <hr>
+        <br>
+        <br>
     </section>
 </main>
 
 
 <section class="links-to-click">
-    <div id="Sign">
-        <p class="Sign-up"> <a href="{% url 'sign-up' %}">Sign Up</a> </p>
-    </div>
-
     <div class="Log">
-        <p class="Login"> <a href="{% url 'log-in' %}" > Login </a> </p>
+        {% if user.is_authenticated %}
+        <span><a href="{% url 'logout' %}">Logout</a></span>
+        {% else %}
+        <p class="Login"> <a href="{% url 'log-in' %}" >Join US </a> </p>
+        {% endif %}
     </div>
+</section>
+
+<main class="main-body">
+    {% for info in data %}
+    <section class="list_post">
+        <h3 class="title-of-post"> <a href="{% url 'post_detail' info.pk %}"> {{ info.title }} </a> </h3> 
+        <p> {{ info.text|truncatewords:20}} </p>
+        <h5 class="date-created"> {{ info.created_date }}
+        <hr>
+        <br>
+    </section>
+    {% endfor %}
+</main>
+
+<section class="bloggers-legend">
+    <p class="top-bloggers"> Top Bloggers </p>
+    <p> Helios Ceaser </p>
+    <p> Jeff Manson </p>
 </section>
 {% endblock %}

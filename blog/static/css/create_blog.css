@@ -1,0 +1,17 @@
+h1 {
+    position: absolute;
+    top: 3rem;
+    left: 50rem;
+}
+
+input {
+    color: blue;
+    display: flex;
+    align-items: center;
+}
+
+div {
+    position: absolute;
+    top: 15rem;
+    left: 50rem;
+}

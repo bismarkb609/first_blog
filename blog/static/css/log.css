@@ -1,0 +1,25 @@
+h1 {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+}
+
+h2 {
+    position: absolute;
+    left: 46%;
+    top: 28%;
+}
+
+main {
+    position: absolute;
+    bottom: 40%;
+    left: 40%;
+}
+
+input {
+    color: blue;
+    display: flex;
+    align-items: center;
+}
+
+

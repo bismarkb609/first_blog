@@ -1,16 +1,28 @@
+{% extends 'blog/base.html' %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/login.css'%}">
 
+{% block index_css %}
+<h2> Log In </h2>
+<link rel="stylesheet" href="{% static 'css/log.css'%}">
+{% endblock %}
+
+<h2> Log In </h2>
+
+{% block content %}
 <span class="loginForm"> 
-    <form method="POST" action="" class="login">
-        <h1> Log In </h1>
+    <form method="POST" action="{% url 'log-in' %}" class="login">
         {% csrf_token %}
         <span class="actual_form">
             {{ loginForm.as_p }}
         </span>
-
         <p class="button">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Login">
         </p>
+        <br>
     </form>
 </span>
+
+<div id="Create-Account">
+    Don't Have An Account? <a href="{% url 'sign-up' %}">Create One</a>
+</div>
+{% endblock %}

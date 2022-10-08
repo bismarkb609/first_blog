@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Creative Minds </title>
+        <meta charset='utf-8' lang='en'>
+        <link rel="stylesheet" href= "{% static 'css/create_blog.css' %}">
+    </head>
+
+   <body>
+        <h1> Bring your ideas into reality </h1>
+
+        <div>
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Publish">
+            </form>
+        </div>
+  </body>
+
+</html>

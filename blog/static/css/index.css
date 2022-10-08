@@ -1,56 +1,27 @@
-.main-body {
-    width: 1400px;
-    background-color: blanchedalmond;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 30px;
-    border: 1px solid blanchedalmond;
-    box-shadow: 10px 10px 50px lightblue;
-    position: absolute;
-    left: 13px;
-}
-
-
-.list_post {
-    border: 1px solid white;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 10px 10px 40px white;
-}
-
-h3{
-    color: #00203FFF;
-}
-
 .bloggers-legend {
     position: absolute;
-    right: 20px;
-    top: 110px;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid blanchedalmond;
-    box-shadow: 10px 10px 50px lightblue;
-    width: 400px;
-    height: 1065px;
-    border-radius: 30px;
+    left: 90%;
+    top: 12%;
 }
 
-.links-to-click {
+
+section div p a {
     position: absolute;
-    top: 10px;
-    right: 130px;
+    top: 12%;
+}
+
+section div span a {
+   position: absolute;
+   top: 14%;
+}
+
+main p a {
+    position: absolute;
+    left: 75%;
+    top: 14%;
+}
+
+/* main h3 {
     
 }
-
-div p a {
-    text-decoration: none;
-}
-
-#Sign {
-    position: relative;
-    right: 79px;
-    top: 40px;
-
-
-}
+*/
